@@ -40,6 +40,12 @@ Run the Gazebo simulation of the manipulator with:
 
 --------------------------------
 
+If you want to launch the gazebo simulation of the controlled arm, run the arm_gazebo.launch.py, which contains both the arm_world.launch.py and the arm_control.launch.py:
+
+      $ ros2 launch arm_gazebo arm_gazebo.launch.py
+
+--------------------------------
+
 If you want to run the simulation without the joints actuated, open the arm_world.launch.py and modify the following code lines:
 
 -       with open(urdf_arm_gazebo, 'r') as infp: ###line 26
@@ -47,13 +53,6 @@ If you want to run the simulation without the joints actuated, open the arm_worl
        {"use_sim_time": True}, ###line 42-43
 
 --------------------------------
-
-If you want to launch the gazebo simulation of the controlled arm, run the arm_gazebo.launch.py, which contains both the arm_world.launch.py and the arm_control.launch.py:
-
-      $ ros2 launch arm_gazebo arm_gazebo.launch.py
-
---------------------------------
-
 
 To use the camera sensor of the manipulator robot in Gazebo, launch the arm_gazebo launch file as previously described, open a new terminal on the same directory, connect the Docker container with the same image. To provide a network bridge which enables the exchange of messages between ROS 2 and Ignition Transport run:
 
